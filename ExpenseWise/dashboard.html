@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- Header -->
+        <nav>
+            <h2 id="dashboard">Dashboard</h2>
+            <span id="welcome-msg">Welcome, Smruti 👋</span>
+        </nav>
+
+        <!-- Expense Overview -->
+        <section class="cards">
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <h1>₹12,450</h1>
+            </div>
+
+            <div class="card">
+                <h3>Transactions</h3>
+                <h1>30</h1>
+            </div>
+
+            <div class="card">
+                <h3>Categories</h3>
+                <h1>6</h1>
+            </div>
+
+            <div class="card">
+                <h3>Highest Expense</h3>
+                <h1>₹2,400</h1>
+            </div>
+
+        </section>
+
+        <!-- Expense History -->
+        <section class="table-section">
+
+            <h2>Expense History</h2>
+
+            <table>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Payment</th>
+                    <th>Amount</th>
+                </tr>
+
+                <tr>
+                    <td>01 Jul</td>
+                    <td>Food</td>
+                    <td>Lunch</td>
+                    <td>UPI</td>
+                    <td>₹350</td>
+                </tr>
+
+                <tr>
+                    <td>02 Jul</td>
+                    <td>Travel</td>
+                    <td>Auto</td>
+                    <td>Cash</td>
+                    <td>₹120</td>
+                </tr>
+
+                <tr>
+                    <td>03 Jul</td>
+                    <td>Shopping</td>
+                    <td>T-Shirt</td>
+                    <td>Card</td>
+                    <td>₹980</td>
+                </tr>
+
+                <tr>
+                    <td>04 Jul</td>
+                    <td>Bills</td>
+                    <td>Electricity</td>
+                    <td>UPI</td>
+                    <td>₹2400</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- Visual Analysis -->
+
+        <h2 class="section-title">Visual Analysis</h2>
+
+        <section class="charts">
+
+            <div class="chart-card">
+                <h2>Category Distribution</h2>
+                <img src="pie-chart-example.svg">
+            </div>
+
+            <div class="chart-card">
+                <h2>Expenses by Category</h2>
+                <img src="simplebar.png">
+            </div>
+
+            <div class="chart-card">
+                <h2>Expense Trend</h2>
+                <img src="line-chart-example.svg">
+            </div>
+
+        </section>
+
+        <!-- Expense Summary -->
+
+        <section class="summary">
+
+            <h2>Expense Summary</h2>
+
+            <ul>
+
+                <li>Total spending recorded: <strong>₹12,450</strong> across
+                    <strong>30 transactions</strong>.
+                </li>
+
+                <li><strong>Food</strong> was the highest spending category with
+                    <strong>₹4,250 (34%)</strong>.
+                </li>
+
+                <li>The highest single expense was
+                    <strong>₹2,400</strong> under <strong>Bills</strong>.
+                </li>
+
+                <li>Expenses were distributed across
+                    <strong>6 categories</strong>.
+                </li>
+
+                <li>The highest spending day was
+                    <strong>04 Jul</strong> with
+                    <strong>₹3,150</strong>.
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- Bottom Buttons -->
+
+        <section class="bottom-buttons">
+
+            <button class="add-btn" onclick="addexpense()">
+                + Add More Expenses
+            </button>
+
+            <button class="logout-btn" onclick="logout()">
+                Logout
+            </button>
+
+        </section>
+
+    </div>
+    <script>
+        function logout() {
+            window.location.href = "index.html";
+        }
+        function addexpense() {
+            window.location.href = "AddExpense.html";
+        }
+    </script>
+</body>
+
+</html>
