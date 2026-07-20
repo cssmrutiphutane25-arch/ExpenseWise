@@ -1,3 +1,3 @@
 # ExpenseWise
 College Project
-expensewiseapp.netlify.app
+expensewise29.netlify.app
