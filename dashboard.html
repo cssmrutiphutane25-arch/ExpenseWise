@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- Header -->
+        <nav>
+            <div class="dashboard-header">
+
+                <div>
+
+                    <p class="badge">Expense Dashboard</p>
+
+                    <h1>Welcome Back, <span id="userName">User</span> 👋</h1>
+
+                    <p class="header-text">
+                        Here's a complete overview of your expenses.
+                    </p>
+
+                </div>
+
+                <div class="today-card">
+
+                    <h3>📅 Today</h3>
+                    <p id="todayDate"></p>
+                    <span id="todayDay"></span>
+
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Expense Overview -->
+        <section class="cards">
+
+            <div class="card">
+
+                <div class="icon">💰</div>
+
+                <h3>Total Expenses</h3>
+
+                <h1 id="totalExpense">₹0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">🧾</div>
+
+                <h3>Transactions</h3>
+
+                <h1 id="transactionCount">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">📂</div>
+
+                <h3>Categories</h3>
+
+                <h1 id="categoryCount">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">💸</div>
+
+                <h3>Highest Expense</h3>
+
+                <h1 id="highestExpense">₹0</h1>
+
+            </div>
+
+        </section>
+
+        <!-- Expense History -->
+        <section class="table-section">
+
+            <h2>🧾 Expense History</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="expenseTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section class="quick-stats">
+
+            <div class="quick-card">
+
+                <h3>📅 Highest Spending Day</h3>
+
+                <h2>04 Jul</h2>
+
+                <p>₹3,150</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h3>💳 Most Used Payment</h3>
+
+                <h2>UPI</h2>
+
+                <p>18 Transactions</p>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h3>📈 Average Expense</h3>
+
+                <h2>₹415</h2>
+
+                <p>Per Transaction</p>
+
+            </div>
+
+        </section>
+
+        <!-- Visual Analysis -->
+        <div class="analysis-heading">
+
+            <h2>📊 Visual Analysis</h2>
+
+            <p>
+                Explore your expenses through interactive charts.
+            </p>
+
+        </div>
+
+        <section class="charts">
+
+            <div class="chart-card">
+
+                <h2>🥧 Category Distribution</h2>
+
+                <p>
+                    Percentage of spending in each category.
+                </p>
+
+                <canvas id="categoryPieChart" class="pie-chart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <h2>📊 Expenses by Category</h2>
+
+                <p>
+                    Compare total expenses across categories.
+                </p>
+
+                <<canvas id="categoryBarChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <h2>📈 Expense Trend</h2>
+
+                <p>
+                    Shows how your spending changed over time.
+                </p>
+
+                <canvas id="expenseLineChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- Expense Summary -->
+        <section class="summary">
+
+            <h2>📌 Expense Insights</h2>
+
+            <ul id="insightList">
+
+            </ul>
+
+        </section>
+
+        <!-- Bottom Buttons -->
+
+        <section class="bottom-buttons">
+
+            <button class="add-btn" onclick="addexpense()">
+                ➕ Add New Expense
+            </button>
+
+            <button class="logout-btn" onclick="logout()">
+                🚪 Logout
+            </button>
+
+        </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

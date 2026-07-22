@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="AddExpense.css">
+    
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="header-card">
+            <div class="step">
+                📝 Expense Entry
+            </div>
+            <h1>💰 Add Your Expense</h1>
+            <p>Track every rupee. Save more. Spend smarter.</p>
+
+        </div>
+        <div class="reminder-card">
+            <h3>🔔 Today's Reminder</h3>
+            <p>Record today's expenses before generating your dashboard.</p>
+        </div>
+
+        <form action="dashboard.html">
+
+            <div class="form-container">
+
+                <div class="info-box">
+                    💡 Fill all details correctly. Click <b>Add Expense</b> to add more transactions or
+                    <b>Generate Dashboard</b> when finished.
+                </div>
+                <h2 class="form-title">
+                    📝 Expense Details
+                </h2>
+
+                <p class="form-subtitle">
+                    Fill in the information below.
+                </p>
+
+                <div class="section">
+
+                    <label>Tracking Period</label>
+
+                    <div class="time-cards">
+
+                        <label>
+                            <input type="radio" name="time-period" value="1 Week">
+                            <div class="time-card">📅<br>1 Week</div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="time-period" value="2 Weeks">
+                            <div class="time-card">📆<br>2 Weeks</div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="time-period" value="3 Weeks">
+                            <div class="time-card">🗓<br>3 Weeks</div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="time-period" value="1 Month">
+                            <div class="time-card">📅<br>1 Month</div>
+                        </label>
+
+                    </div>
+
+                    <p id="selectedPeriod">
+                        No tracking period selected.
+                    </p>
+
+                </div>
+                <div class="section">
+
+                    <label>Budget for this Tracking Period</label>
+
+                    <input type="number" id="budget" placeholder="₹ Enter your budget" required>
+
+                </div>
+                <div class="section">
+                    <label>Expense Title</label>
+                    <input type="text" id="title" placeholder="Expense Name" required>
+                </div>
+
+
+                <div class=" section">
+                    <label>Category</label>
+                    <select required id="category">
+                        <option value="" selected>Select Category</option>
+                        <option value="Food">🍔 Food</option>
+                        <option value="Travel">🚌 Travel</option>
+                        <option value="Shopping">🛍 Shopping</option>
+                        <option value="Bills">💡 Bills</option>
+                        <option value="Entertainment">🎬 Entertainment</option>
+                        <option value="Healthcare">🩺 Healthcare</option>
+                        <option value="Education">📚 Education</option>
+                        <option value="Others">🎁 Others</option>
+                    </select>
+                </div>
+
+                <div class="two-column">
+                    <div>
+                        <label>Amount</label>
+                        <input type="number" placeholder="₹ 0.00" required id="amount">
+                    </div>
+
+                    <div>
+                        <label>Date</label><br>
+                        <input type="date" required id="date">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <label>Description</label>
+                    <textarea rows="4" placeholder="Optional note..." id="description"></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="add-btn" onclick="addExpense()">
+                        ➕ Add Expense
+                    </button>
+                    <button type="button" class="dashboard-btn" onclick="generateDashboard()">
+                        📊 Generate Dashboard
+                    </button>
+                </div>
+            </div>
+
+            <div class="progress-card">
+
+                <h3>📊 Current Tracking Summary</h3>
+
+                <div class="progress-grid">
+
+                    <div>
+                        <h4>Expenses Added</h4>
+                        <p id="expenseCount">0</p>
+                    </div>
+
+                    <div>
+                        <h4>Budget</h4>
+                        <p id="budgetAmount">₹0</p>
+                    </div>
+
+                    <div>
+                        <h4>Total Spent</h4>
+                        <p id="totalAmount">₹0</p>
+                    </div>
+
+                    <div>
+                        <h4>Remaining Budget</h4>
+                        <p id="remainingBudget">₹0</p>
+                    </div>
+
+                    <div>
+                        <h4>Budget Used</h4>
+                        <p id="budgetUsed">0%</p>
+                    </div>
+
+                </div>
+
+            </div>
+    </div>
+    </form>
+    </div>
+<script src="AddExpense.js"></script>
+</body>
+
+</html>

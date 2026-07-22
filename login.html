@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+
+    <div class="login-wrapper">
+
+        <!-- Left Side -->
+
+        <div class="left-section">
+
+            <img src="logo-removebg-preview.png" alt="logo" class="logo">
+
+            <h1>Track Every Rupee.<br>Spend Smarter.</h1>
+
+            <p class="left-text">
+                Sign in to continue managing your expenses with beautiful analytics.
+            </p>
+
+            <div class="login-features">
+
+                <h2>Why ExpenseWise?</h2>
+
+                <div class="feature-item">
+                    <div class="icon">💰</div>
+
+                    <div>
+                        <h3>Unlimited Expense Tracking</h3>
+                        <p>Record every expense in just a few clicks.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+
+                    <div>
+                        <h3>Interactive Dashboard</h3>
+                        <p>Visual reports and spending summaries.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="icon">🔔</div>
+
+                    <div>
+                        <h3>Smart Expense Reminder</h3>
+                        <p>Daily reminder to record your expenses.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="icon">📈</div>
+
+                    <div>
+                        <h3>Expense Insights</h3>
+                        <p>Understand your spending habits instantly.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Side -->
+
+        <div class="login-page">
+
+            <div class="login-container">
+
+                <h2>Welcome Back 👋</h2>
+
+                <p class="subtitle">
+                    Login to continue
+                </p>
+
+                <label for="email-add">Email Address</label>
+                <input type="email" placeholder="Enter your email" id="email-add">
+
+                <div class="password-box">
+
+                    <input type="password" id="password" placeholder="🔒 Password">
+
+                    <span id="togglePassword">👁️</span>
+
+                </div>
+                <div class="login-options">
+
+                    <div class="remember">
+
+                        <input type="checkbox" id="remember">
+
+                        <label for="remember">Remember Me</label>
+
+                    </div>
+
+                    <a href="#" class="forgot-password">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <button id="login-btn" onclick="loginUser()">
+                    Login
+                </button>
+
+                <p class="signup-text">
+                    Don't have an account?
+                    <a href="signup.html">Create one</a>
+                </p>
+
+                <div class="reminder">
+
+                    🔔 <strong>Reminder</strong>
+
+                    <p>Add your expenses regularly to keep your dashboard updated.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+
+        // Auto-fill remembered email
+        window.onload = function () {
+
+            let rememberedEmail = localStorage.getItem("rememberEmail");
+
+            if (rememberedEmail) {
+                document.getElementById("email-add").value = rememberedEmail;
+                document.getElementById("remember").checked = true;
+            }
+
+        }
+
+        // Show / Hide Password
+        const toggle = document.getElementById("togglePassword");
+        const password = document.getElementById("password");
+
+        toggle.addEventListener("click", function () {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+                toggle.innerHTML = "🙈";
+
+            } else {
+
+                password.type = "password";
+                toggle.innerHTML = "👁️";
+
+            }
+
+        });
+
+        function loginUser() {
+
+    let email = document.getElementById("email-add").value.trim();
+    let pass = document.getElementById("password").value;
+
+    // Check empty fields
+    if(email === "" || pass === ""){
+        alert("Please fill all fields.");
+        return;
+    }
+
+    let savedEmail = localStorage.getItem("userEmail");
+    let savedPassword = localStorage.getItem("userPassword");
+    let savedName = localStorage.getItem("userName");
+
+    console.log("Entered Email:", email);
+    console.log("Saved Email:", savedEmail);
+    console.log("Entered Password:", pass);
+    console.log("Saved Password:", savedPassword);
+
+    if (email === savedEmail && pass === savedPassword) {
+
+        // Remember Email
+        if(document.getElementById("remember").checked){
+            localStorage.setItem("rememberEmail", email);
+        }else{
+            localStorage.removeItem("rememberEmail");
+        }
+
+        // Change button text
+        let btn = document.getElementById("login-btn");
+        btn.innerHTML = "Logging in...";
+        btn.disabled = true;
+
+        alert("Welcome back, " + savedName + " 👋");
+
+        // Redirect
+        setTimeout(function () {
+            window.location.href = "AddExpense.html";
+        },1000);
+
+    } else {
+
+        alert("Invalid Email or Password.");
+
+    }
+
+}
+
+    </script>
+
+</body>
+
+</html>

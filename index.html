@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseWise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <a href="indexx.html"><img src="logo-removebg-preview.png" alt="logo" id="logo"></img></a>
+        <ul>
+            <li><a href="indexx.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+
+        <div class="hero-left">
+
+            <p id="large_heading">
+                Track Every Rupee. Save More. Spend Smarter.
+            </p>
+
+            <p id="subheading">
+                Manage your daily expenses with intelligent insights and beautiful analytics.
+            </p>
+
+            <button onclick="openPopup()" class="hero-btn">
+                Get Started
+            </button>
+
+            <a href="#features" class="learn-btn">Learn More </a>
+
+        </div>
+
+        <img src="Revenue.gif" alt="Illustration" class="illustration">
+
+    </div>
+    <section class="reminder">
+
+        <span>🔔</span>
+
+        <div>
+
+            <h3>Never Miss an Expense</h3>
+
+            <p>
+                ExpenseTracker reminds you to record your latest expenses so your dashboard always stays updated.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="features">
+
+        <h2>Why Choose ExpenseWise?</h2>
+
+        <div class="features-container">
+
+            <div class="feature-card">
+                <h3>💸 Smart Expense Tracking</h3>
+                <p>Track your daily expenses with ease. Organize every transaction in one place and stay on top of your
+                    spending.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📊 Visual Analytics</h3>
+                <p>Understand your spending through interactive charts. Easily identify trends and monitor your
+                    financial habits.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎯 Budget Planning</h3>
+                <p>Create monthly budgets and monitor your progress. Stay within your limits and achieve your savings
+                    goals.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📅 Expense Reports</h3>
+                <p>Access clear weekly and monthly summaries. Review your spending history anytime.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔒 Secure Data</h3>
+                <p>Your expense information is stored securely. Keep your financial records safe and protected.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📈 Spending Insights</h3>
+                <p>Discover where your money goes. Analyze spending patterns and make smarter financial decisions.</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="timeline-section">
+        <h2>How ExpenseWise Works</h2>
+
+        <div class="timeline">
+
+            <div class="step">
+                <div class="circle">1</div>
+                <div class="content">
+                    <h3>Create an Account</h3>
+                    <p>Create your free ExpenseWise account and securely access your dashboard.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="circle">2</div>
+                <div class="content">
+                    <h3>Select a Time Period</h3>
+                    <p>Choose whether you want to manage expenses for 1 week, 2 weeks, 3 weeks or 1 month.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="circle">3</div>
+                <div class="content">
+                    <h3>Add Expenses</h3>
+                    <p>Enter your daily spending with categories like Food, Travel, Shopping and Bills.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="circle">4</div>
+                <div class="content">
+                    <h3>View Analytics</h3>
+                    <p>ExpenseWise automatically generates reports, charts and spending insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="about">
+        <div class="about-right">
+            <h1>About ExpenseWise</h1>
+            <p id="heading">ExpenseWise is a smart expense tracking web application designed to help users monitor their
+                daily
+                spending, manage budgets, and gain valuable financial insights through interactive analytics. Our goal
+                is to make personal finance simple, organized, and accessible for everyone.</p>
+            <h2>Helping you understand your money, one expense at a time.</h2>
+        </div>
+        <img src="Analysis-rafiki.png" alt="Illustration" class="illustration">
+    </div>
+    <footer>
+
+        <div class="footer-logo">
+            <img src="logo-removebg-preview.png" alt="ExpenseWise Logo">
+        </div>
+
+        <p class="tagline">
+            Track Every Rupee. Save More. Spend Smarter.
+        </p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 ExpenseWise. All Rights Reserved.
+        </p>
+
+    </footer>
+    <!-- Get Started Popup -->
+    <div class="popup-overlay" id="popup">
+
+        <div class="popup-box">
+
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+
+            <div class="popup-icon">💰</div>
+
+            <p id="welcome-title">Welcome to ExpenseWise</p>
+
+            <p>Track your expenses, manage your budget and gain valuable insights.</p>
+
+            <div class="popup-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Welcome Popup -->
+
+    <div id="welcomePopup" class="popup">
+
+        <div class="popup-box">
+
+            <p id="welcome-title">👋 Welcome to ExpenseWise</p>
+
+            <p>
+                Track every expense, manage your budget,
+                and understand your spending with beautiful
+                dashboards.
+            </p>
+
+            <button onclick="closePopup()">
+                Get Started
+            </button>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    window.onload = function () {
+
+        setTimeout(function () {
+
+            document.getElementById("welcomePopup").style.display = "flex";
+
+        }, 500);
+
+    }
+
+    function closePopup() {
+
+        document.getElementById("welcomePopup").style.display = "none";
+
+    }
+
+
+
+
+</script>
+
+</html>

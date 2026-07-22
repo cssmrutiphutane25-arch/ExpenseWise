@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+
+</head>
+
+<body>
+    <div class="signup-page">
+
+        <div class="illustration">
+
+            <h1 class="left-heading">Start Your Smart Saving Journey</h1>
+
+            <p class="left-text">
+                Create your account and begin tracking your expenses with beautiful analytics and helpful reminders.
+            </p>
+
+            <div class="feature-tags">
+
+                <span>📊 Analytics</span>
+
+                <span>🔔 Reminders</span>
+
+                <span>💰 Budget Tracking</span>
+
+                <span>📈 Insights</span>
+
+            </div>
+
+            <img src="Money income-bro.png" alt="Signup Illustration">
+
+
+
+        </div>
+        <div class="signup-page">
+            <div class="signup-container">
+                <div class="badge">
+                    ✨ Join 500+ Happy Users
+                </div>
+                <h1>Create Your ExpenseWise Account</h1>
+                <div>
+                    <label for="fullname">👤 Full Name</label>
+                    <input type="text" name="fullname" id="full-name" autocomplete="on" autofocus>
+                </div>
+                <div>
+                    <label for="email-address">📧 Email Address</label>
+                    <input type="text" name="email-address" id="email-add" autocomplete="on" autofocus>
+                </div>
+                <div>
+                    <label for="password">🔐 Password</label>
+                    <input type="password" name="password" id="password" autofocus>
+                </div>
+                <div>
+                    <label for="c-password">🔒 Confirm Password</label>
+                    <input type="password" name="c-password" id="c-password" autofocus>
+                </div>
+                <p class="password-tip">
+
+                    🔒 Use at least 8 characters.
+
+                </p>
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" id="checkbox">I agree to the Terms & Conditions</label>
+                </div>
+                <button type="button" onclick="validateSignup()">
+                    Create Account
+                </button>
+                <p>Already have an account <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcomePopup" class="popup">
+
+        <div class="popup-content">
+
+            <h2>🎉 Welcome to ExpenseWise!</h2>
+
+            <p>Your account is ready.</p>
+
+            <p>Add your first expense to unlock your dashboard.</p>
+
+            <button class="popup-btn" onclick="goToExpensePage()">
+                Add My First Expense
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+<script>
+    function validateSignup() {
+
+        const name = document.getElementById("full-name").value.trim();
+
+        const email = document.getElementById("email-add").value.trim();
+
+        const password = document.getElementById("password").value;
+
+        const confirmPassword = document.getElementById("c-password").value;
+
+        const terms = document.getElementById("terms").checked;
+
+        // Name
+        if (name === "") {
+            alert("Please enter your full name.");
+            return;
+        }
+
+        // Email
+        if (!email.includes("@") || !email.includes(".")) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        // Password Length
+        if (password.length < 8) {
+            alert("Password must contain at least 8 characters.");
+            return;
+        }
+
+        // Password Match
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        // Terms
+        if (!terms) {
+            alert("Please accept the Terms & Conditions.");
+            return;
+        }
+
+        // Save user details
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPassword", password);
+
+        // Show welcome popup
+        document.getElementById("welcomePopup").style.display = "flex";
+
+
+        // Show popup
+        document.getElementById("welcomePopup").style.display = "flex";
+    }
+
+    function goToExpensePage() {
+        window.location.href = "AddExpense.html";
+    }
+</script>
+
+</html>
